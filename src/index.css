@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pizza-green: #006838;
+  --color-pizza-red: #C41230;
+  --color-pizza-yellow: #FFD200;
+  --color-pizza-gray: #F4F4F4;
+  --font-display: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  }
+
+  .checkerboard-top {
+    background-image: linear-gradient(45deg, #fff 25%, transparent 25%), 
+                      linear-gradient(-45deg, #fff 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #fff 75%), 
+                      linear-gradient(-45deg, transparent 75%, #fff 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .checkerboard-pattern {
+    background-image: conic-gradient(#fff 90deg, transparent 90deg 180deg, #fff 180deg 270deg, transparent 270deg);
+    background-size: 20px 20px;
+  }
+
+  .shadow-pizza {
+    box-shadow: 0 10px 30px rgba(0, 104, 56, 0.15);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 3s infinite ease-in-out;
+}
